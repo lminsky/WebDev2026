@@ -9,19 +9,26 @@
 
     <p>This <b>is</b> <i>very</i> <u>good</u> <b><i>text</i></b>. I am running out of words.</p>
 
-    <h2>This is an h2</h2>
-    <h3>This is an h3</h3>
-    <h4>This is an h4</h4>
+    <h2 style="text-align: center; color: red; font-family: 'Comic Sans MS'" >This is an h2</h2>
+    <h2>This is another h2</h2>
+    <h3 class="green">This is an h3</h3>
+    <h3>This is another h3</h3>
+    <h4 id="idDemo">This is an h4</h4>
     <h5>This is an h5</h5>
-    <h6>This is an h6</h6>
+    <h6 class="green">This is an h6</h6>
     <h7>This is an h7</h7>
     Hello this&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is text
 
-    <a href="second.html">
+    <p><strong>This text is strong.</strong></p>
+
+    <a href="second.html" class="green">
         <h1>This is a big link</h1>
+        <p>This is the same link</p>
     </a>
 
-    <img width="300" src="okapi.jpg">
+    <div style="text-align: center">
+        <img width="300" src="okapi.jpg">
+    </div>
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/CFGLoQIhmow?si=Cxj3jzbj_K3VJ5lq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -50,4 +57,36 @@
         </tr>
     </table>
 </body>
+
+<style>
+    h2 {
+        color: #36a8a4;
+        font-size: 50px;
+    }
+
+    strong {
+        font-weight: bold;
+        font-size: 50px;
+        text-shadow: #36a8a4 3px 1px 1px;
+    }
+
+    h7 {
+        display: block;
+        font-size: 0.5em;
+        margin-block-start: 2.33em;
+        margin-block-end: 2.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+    }
+
+    .green {
+        color: #569802;
+    }
+
+    #idDemo {
+        color: purple;
+    }
+</style>
 </html>
