@@ -7,9 +7,9 @@
 <body>
     <marquee><h1>Hello World</h1></marquee>
 
-    <p>This <b>is</b> <i>very</i> <u>good</u> <b><i>text</i></b>. I am running out of words.</p>
+    <p>This <b>is</b> <i>very</i> <u>good</u> <b><i>text</i></b>. I am <span style="color: aqua">running</span> out of words.</p>
 
-    <h2 style="text-align: center; color: red; font-family: 'Comic Sans MS'" >This is an h2</h2>
+    <h2 style="text-align: center; color: red; font-family: 'Comic Sans MS'" id="firstH2" >This is an h2</h2>
     <h2>This is another h2</h2>
     <h3 class="green">This is an h3</h3>
     <h3>This is another h3</h3>
@@ -26,9 +26,7 @@
         <p>This is the same link</p>
     </a>
 
-    <div style="text-align: center">
-        <img width="300" src="okapi.jpg">
-    </div>
+    <img style="display:block; margin-left: auto; margin-right: auto" width="150" src="okapi.jpg">
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/CFGLoQIhmow?si=Cxj3jzbj_K3VJ5lq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -87,6 +85,15 @@
 
     #idDemo {
         color: purple;
+    }
+
+    #firstH2 {
+        background-color: blue;
+        /*display: inline;*/
+        padding: 50px;
+        border: 5px dotted #ff7200;
+        margin-left: auto;
+        margin-right: auto;
     }
 </style>
 </html>
