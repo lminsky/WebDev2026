@@ -5,7 +5,7 @@
     <title>Hello</title>
 </head>
 <body>
-    <marquee><h1>Hello World</h1></marquee>
+    <h1 id="header" onclick="changeHeader()">Hello World</h1>
 
     <p>This <b>is</b> <i>very</i> <u>good</u> <b><i>text</i></b>. I am <span style="color: aqua">running</span> out of words.</p>
 
@@ -96,4 +96,37 @@
         margin-right: auto;
     }
 </style>
+
+<script>
+    // console.log("Hello", "World");
+    // console.log("Hello" + "World");
+    // console.log("Hello");
+    // console.log("World");
+    //
+    // let x = 5;
+    // console.log(x, x+x);
+    // let y = "6";
+    // console.log(y, y+y);
+    //
+    // console.log("x+y", x+y);
+    //
+    // x = x + 1;
+    // console.log("x", x);
+    //
+    // x += 3;
+    // console.log("x", x);
+    //
+    // x++;
+
+    function changeHeader() {
+        let test = document.getElementById("header");
+        console.log(test);
+        test.innerText = "This is new text";
+        test.style.color = "red";
+    }
+
+
+</script>
+
+
 </html>
