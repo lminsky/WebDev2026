@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MadLibs</title>
+</head>
+<body>
+  <h1>MadLibs</h1>
+
+  <div id="entry">
+    <h2>My test page</h2>
+    <p>Place: <input type="text" id="place_input"></p>
+    <p>Past Tense Verb: <input type="text"></p>
+    <button onclick="madlibs()">Submit</button>
+  </div>
+  <div id="results">
+    <h2>Results</h2>
+    <p>One day I went to the <span id="place_output">(PLACE)</span>. While I saw there I <span>(PAST TENSE NOUN)</span>.</p>
+  </div>
+</body>
+
+<script>
+  function madlibs() {
+    let place_input = document.getElementById("place_input");
+    document.getElementById("place_output").innerHTML = place_input.value;
+  }
+</script>
+</html>
