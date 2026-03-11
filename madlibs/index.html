@@ -10,19 +10,38 @@
   <div id="entry">
     <h2>My test page</h2>
     <p>Place: <input type="text" id="place_input"></p>
-    <p>Past Tense Verb: <input type="text"></p>
+    <p>Past Tense Verb: <input type="text" id="verb_input"></p>
     <button onclick="madlibs()">Submit</button>
   </div>
   <div id="results">
     <h2>Results</h2>
-    <p>One day I went to the <span id="place_output">(PLACE)</span>. While I saw there I <span>(PAST TENSE NOUN)</span>.</p>
+    <p>One day I went to the <span id="place_output" class="outputs">(PLACE)</span>. While I was there I <span id="verb_output" class="outputs">(PAST TENSE NOUN)</span>.</p>
   </div>
 </body>
+
+<style>
+  #results {
+    display: none;
+  }
+
+  span.outputs {
+    /*color: red;*/
+    font-weight: bold;
+  }
+</style>
 
 <script>
   function madlibs() {
     let place_input = document.getElementById("place_input");
     document.getElementById("place_output").innerHTML = place_input.value;
+    let verb_input = document.getElementById("verb_input");
+    document.getElementById("verb_output").innerHTML = verb_input.value;
+
+    if(place_input.value != "school") {
+      document.getElementById("results").style.display = "block";
+      document.getElementById("entry").style.display = "none";
+    }
+
   }
 </script>
 </html>
