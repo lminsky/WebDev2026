@@ -33,14 +33,31 @@
 <script>
   function madlibs() {
     let place_input = document.getElementById("place_input");
-    document.getElementById("place_output").innerHTML = place_input.value;
+    document.getElementById("place_output").innerText = place_input.value;
     let verb_input = document.getElementById("verb_input");
-    document.getElementById("verb_output").innerHTML = verb_input.value;
+    document.getElementById("verb_output").innerText = verb_input.value;
 
-    if(place_input.value != "school") {
-      document.getElementById("results").style.display = "block";
-      document.getElementById("entry").style.display = "none";
+    if(place_input.value == "" || verb_input.value == "") {
+      return false;
     }
+
+    document.getElementById("results").style.display = "block";
+    document.getElementById("entry").style.display = "none";
+
+
+    // if(place_input.value != "" && verb_input.value != "") {
+    //   document.getElementById("results").style.display = "block";
+    //   document.getElementById("entry").style.display = "none";
+    // } else {
+    //   alert("Please enter values for every input!");
+    //   // let email = prompt("Please enter an email address");
+    //   // console.log(email);
+    // }
+
+
+    // if(true) {
+    //   console.log("it is true")
+    // }
 
   }
 </script>

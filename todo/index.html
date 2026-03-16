@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do</title>
+</head>
+<body>
+  <h1>Louis's To Do List</h1>
+  <h2>Add a task</h2>
+  <label for="task">Task Name: </label><input id="task" type="text">
+  <button id="add">Add</button>
+
+  <h2>Tasks</h2>
+  <div id="task_list">
+    <div class="task"><input type="checkbox">Task 1</div>
+    <div class="task"><input type="checkbox">Task 2</div>
+    <div class="task"><input type="checkbox">Task 3</div>
+  </div>
+</body>
+
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #6a915d;
+    margin: 25px;
+  }
+
+  div.task > input {
+    margin-right: 15px;
+  }
+
+  #task_list {
+    margin-left: 25px;
+  }
+
+  div.task {
+    background-color: white;
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+</style>
+</html>
