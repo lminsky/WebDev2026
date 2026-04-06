@@ -7,7 +7,7 @@
 <body>
   <h1>Louis's To-Do List</h1>
   <h2>Add a task</h2>
-  <label for="task">Task Name: </label><input id="task" type="text" placeholder="Water plants">
+  <label for="task">Task Name: </label><input id="task" type="text" placeholder="task name...">
   <button id="add" onclick="new_task()">Add</button>
 
   <h2>Tasks</h2>
@@ -40,6 +40,19 @@
     padding: 15px;
     border-radius: 10px;
   }
+
+  input[type='checkbox']:checked + span {
+      color: #700000;
+      text-decoration: line-through;
+  }
+
+  div.task:has(input[type='checkbox']:checked) {
+    background-color: #4f7144;
+  }
+
+  div.task:hover {
+      background-color: #f1f1f1;
+  }
 </style>
 
 <script>
@@ -66,8 +79,19 @@
     new_span.innerText = task_name;
     new_div.appendChild(new_span);
 
+    let trash = document.createElement("span");
+    trash.className = "trash";
+    trash.innerText = "🗑️";
+    trash.style.float = "right";
+    trash.addEventListener("click", delete_task)
+    new_div.appendChild(trash);
+
     task_input.value = "";
     task_input.focus();
+  }
+
+  function delete_task(e){
+      console.log(e)
   }
 </script>
 </html>
