@@ -81,17 +81,21 @@
 
 
 
-    function new_task(){
-    let task_input = document.getElementById('task');
+  function new_task() {
+      let task_input = document.getElementById('task');
+      let task_name = task_input.value;
+      if (task_name == "") {
+          return false;
+      }
+      console.log(task_name);
+      setCookie("task", getCookie("task") + "|" + task_name, 15);
+      add_task(task_name);
 
-    let task_name = task_input.value;
-    if(task_name == ""){
-      return false;
-    }
+      task_input.value = "";
+      task_input.focus();
+  }
 
-    console.log(task_name);
-    setCookie("task", getCookie("task") + "|" + task_name, 15);
-
+  function add_task(task_name) {
     let new_div = document.createElement("div");
     new_div.className = "task";
     document.getElementById("task_list").appendChild(new_div);
@@ -112,8 +116,6 @@
     trash.addEventListener("click", delete_task)
     new_div.appendChild(trash);
 
-    task_input.value = "";
-    task_input.focus();
   }
 
   function delete_task(e){
@@ -122,6 +124,27 @@
 
 
   let current_cookie = getCookie("task");
+    console.log(current_cookie);
+  current_cookie = current_cookie.split("|")
   console.log(current_cookie);
+  // console.log(current_cookie.length);
+  // console.log(current_cookie[1]);
+  // current_cookie[1] = current_cookie[1].toUpperCase();
+  // console.log(current_cookie[1]);
+  // console.log(current_cookie);
+
+    // console.log(current_cookie[0]);
+    // console.log(current_cookie[1]);
+    // console.log(current_cookie[2]);
+    // console.log(current_cookie[3]);
+    // console.log(current_cookie[4]);
+    // console.log(current_cookie[5]);
+
+    for(let i = 0; i < current_cookie.length; i = i + 1){
+        console.log(current_cookie[i]);
+        add_task(current_cookie[i]);
+    }
+
+
 </script>
 </html>
