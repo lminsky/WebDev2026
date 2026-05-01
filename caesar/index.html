@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caesar Cipher</title>
+</head>
+<body>
+<h1>Caesar Cipher</h1>
+<p><label for="key">Enter a key: </label><input type="number" id="key" value="3"></p>
+<p><label for="plaintext">Enter your message: </label><input type="text" id="plaintext" value="hello"></p>
+<p><button id="encode" onclick="encode()">Encode</button></p>
+<p id="ciphertext"></p>
+</body>
+
+<script>
+    function encode() {
+        // Get the key value and turn it into an integer
+        let key = document.getElementById("key").value;
+        key = parseInt(key);
+        // Get the message and make it uppercase
+        let plaintext = document.getElementById("plaintext").value;
+        plaintext = plaintext.toUpperCase();
+
+        let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.,?!: "; // The characters that will be shifted
+        let ciphertext = ""; // The resulting text post-shift. Starts empty
+
+        // Loop through each character in the plaintext message
+        for(let i = 0; i < plaintext.length; i=i+1) {
+            // Get the index location in chars where you can find the character
+            let charLocation = chars.indexOf(plaintext[i])
+            // Find the new index value by adding the location and the key
+            let newCharLocation = charLocation + key;
+            while(newCharLocation < 0) {
+                newCharLocation += chars.length
+            }
+            newCharLocation = newCharLocation % chars.length;
+            // Find what character is in the new location in the "chars" string
+            let newChar = chars[newCharLocation];
+            console.log(plaintext[i], charLocation, newCharLocation, newChar);
+            // Add the shifted character to the ciphertext string
+            if(charLocation === -1) {
+                ciphertext = ciphertext + plaintext[i]
+            } else {
+                ciphertext = ciphertext + newChar;
+            }
+        }
+        // Put the ciphertext string on the page
+        document.getElementById("ciphertext").innerText = ciphertext;
+    }
+</script>
+</html>

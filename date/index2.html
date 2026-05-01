@@ -6,31 +6,23 @@
 </head>
 <body>
     <h1>Date Object</h1>
-<p>Enter a date <input id="date" type="date"> <button onclick="setInterval(count, 500);">Start</button></p>
-<div id="text" style="display:none">
-    <p>Graduation is in <span id="weeks"></span> weeks, <span id="days"></span> days, <span id="hours"></span> hours, <span id="minutes"></span> minutes, and <span id="seconds"></span> seconds.</p>
-</div>
+
+<p>Graduation is in <span id="weeks"></span> weeks, <span id="days"></span> days, <span id="hours"></span> hours, <span id="minutes"></span> minutes, and <span id="seconds"></span> seconds.</p>
 </body>
 
 <script>
+    count();
+    setInterval(count, 500);
+
+
     function count() {
         let now = new Date();
-        // console.log("NOW: " + now);
+        console.log("NOW: " + now);
 
-        let date_input = document.getElementById("date");
-        console.log(date_input.value);
+        let then = new Date("6/12/26 10:00:00");
+        console.log("THEN: " + then);
 
-        if(date_input.value == ""){
-            document.getElementById("text").style.display = "none";
-        } else {
-            document.getElementById("text").style.display = "block";
-        }
-
-
-        let then = new Date(date_input.value);
-        // console.log("THEN: " + then);
-
-        // console.log((then - now) / 1000 / 60 / 60 / 24)
+        console.log((then - now) / 1000 / 60 / 60 / 24)
         let difference = then - now
         // let days = difference / 1000 / 60 / 60 / 24;
         let weeks = Math.floor(difference / (1000 * 60 * 60 * 24 * 7));
