@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather API</title>
+</head>
+<body>
+<h1>Weather API</h1>
+<p>It is <span id="temp"></span> degrees F in <span id="location"></span></p>
+</body>
+
+<script>
+    let url = "https://api.openweathermap.org/data/2.5/weather?lon=-73.992376&lat=40.6925&appid=1ae4a2bcdf17f249e7d3226a52e8d89e&units=imperial"
+    fetch(url).then(function(response) {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json(); // Parses JSON response into native JS object
+    }).then(function(data) {
+        console.log(data)
+        document.getElementById("temp").innerHTML = data.main.temp;
+        document.getElementById("location").innerHTML = data.name;
+    }).catch(function(error) {
+        console.error('Fetch error:', error)
+    });
+</script>
+</html>
